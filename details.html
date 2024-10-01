@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMIT University</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-[#000054] p-4 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <!-- Wrap the RMIT logo in an <a> tag to make it clickable -->
+        <a href="index.html">
+          <img src="images/logo.png" alt="RMIT Logo" class="h-24 w-30">
+      </div>
+      <div class="flex items-center space-x-6 font-helvetica font-semibold">
+        <a href="index.html" class="text-white">Homepage</a>
+        <a href="dashboard.html" class="text-white">Dashboard</a>
+        <a href="profile.html" class="text-white">Profile</a>
+        <div class="bg-[#ffffff] h-8 w-8 rounded-full text-center text-black">
+          <a href="profile.html">AL</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modal Popup -->
+  <div class="container mx-auto p-6">
+    <div class="bg-white p-6 shadow-lg rounded-lg relative">
+      <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" onclick="closeModal()">✖️</button>
+      <!-- Header -->
+      <div class="flex items-center space-x-6">
+        <img src="images/collaborate.png" alt="Collaborate Ultra" class="h-24">
+        <div>
+          <h2 class="text-2xl font-bold">Collaborate Ultra</h2>
+          <p class="text-gray-500">Collaborate Ultra is a virtual classroom and online meeting tool designed for education. It allows teachers and students to engage in real-time through video conferencing, chat, and interactive tools like polls, breakout rooms, and shared whiteboards. It's often used in schools and universities to deliver remote or hybrid classes and supports recording sessions for later viewing.</p>
+        </div>
+      </div>
+
+      <!-- Feature List -->
+      <div class="mt-4">
+        <h3 class="text-lg font-bold">Features:</h3>
+        <ul class="list-disc list-inside text-gray-600">
+          <li>Real-time video conferencing</li>
+          <li>Breakout rooms for group work</li>
+          <li>Interactive whiteboard and polls</li>
+          <li>Session recording and playback</li>
+          <li>Chat and hand-raise functionality</li>
+        </ul>
+      </div>
+
+      <!-- Courses used for -->
+      <div class="mt-4">
+        <h3 class="text-lg font-bold">Courses used for:</h3>
+        <p>INTE2397 Knowledge Management</p>
+        <p>ISYS3300 Business Ethics for a Digital Society</p>
+        <div class="flex space-x-2 mt-2">
+          <span class="h-10 w-10 bg-gray-200 text-center text-black-600 flex items-center font-bold rounded-full justify-center">+23</span>
+        </div>
+      </div>
+
+      <!-- Similar Educational Technologies -->
+      <div class="mt-4">
+        <h3 class="text-lg font-bold">Similar Educational Technologies Used:</h3>
+        <div class="flex space-x-4 mt-2">
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <img src="images/Canvas-Logo.png" alt="Canvas Lms" class="h-12 mx-auto">
+            <p class="text-center mt-2">Canvas LMS</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <img src="images/miro.png" alt="Miro Board" class="h-12 mx-auto">
+            <p class="text-center mt-2">Miro Board</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <img src="images/Padlet.png" alt="Padlet" class="h-12 mx-auto">
+            <p class="text-center mt-2">Padlet</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ratings and Reviews -->
+      <div class="mt-4">
+        <h3 class="text-lg font-bold">Ratings and Reviews:</h3>
+        <div class="space-y-4">
+          <!-- Review 1 -->
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <div class="flex items-center space-x-4">
+              <img src="https://via.placeholder.com/40" alt="Jake Jill" class="h-10 w-10 rounded-full">
+              <div>
+                <p class="font-semibold">Jake Jill</p>
+                <p class="text-sm text-gray-500">"Collaborate Ultra is a simple and easy-to-use tool for student engagement and group work planning."</p>
+              </div>
+              <div class="ml-auto">
+                <span class="text-yellow-500">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <div class="flex items-center space-x-4">
+              <img src="https://via.placeholder.com/40" alt="Fred Cheesecake" class="h-10 w-10 rounded-full">
+              <div>
+                <p class="font-semibold">Fred Cheesecake</p>
+                <p class="text-sm text-gray-500">"Great tool for remote learning and class collaboration."</p>
+              </div>
+              <div class="ml-auto">
+                <span class="text-yellow-500">★★★★★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function closeModal() {
+      // Function to close the modal (redirect or hide functionality can be added here)
+      alert("Close button clicked");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page with Sidebar and Multiple Popups</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  @import url("https://use.typekit.net/ogl3tar.css");
+    .hidden { display: none; } /* Hidden class for modals */
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar with Search Bar -->
+  <nav class="bg-[#000054] p-4 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- RMIT Logo -->
+      <a href="index.html">
+        <img src="images/logo.png" alt="RMIT Logo" class="h-24 w-30">
+      </a>
+
+      <!-- Navbar Links -->
+      <div class="flex items-center space-x-6 font-museo font-semibold">
+        <a href="index.html" class="text-white">Homepage</a>
+        <a href="dashboard.html" class="text-white">Dashboard</a>
+        <a href="profile.html" class="text-white">Profile</a>
+        <div class="bg-[#ffffff] h-8 w-8 rounded-full text-center text-black">
+          <a href="profile.html">AL</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Area with Sidebar -->
+  <div class="container mx-auto p-6 flex">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-white p-4 shadow-md rounded-lg">
+      <h2 class="text-lg font-bold mb-4">REFINE MY RESULTS</h2>
+      <div>
+        <h3 class="text-sm font-bold mb-2">SORT BY</h3>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Relevance
+        </label>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-sm font-bold mb-2">RESOURCE TYPE</h3>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Software
+        </label>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Application
+        </label>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Resource
+        </label>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Video
+        </label>
+        <label class="block">
+          <input type="checkbox" class="mr-2"> Documents
+        </label>
+      </div>
+    </div>
+
+    <!-- Team Member List -->
+    <div class="w-4/5 ml-6">
+      <h2 class="text-xl font-bold mb-4">Your Team</h2>
+      <div class="grid grid-cols-4 gap-4">
+        <!-- Team Member Card 1 -->
+        <div class="bg-white p-4 shadow-md rounded-lg text-center">
+          <img src="https://via.placeholder.com/100" alt="Jennifer Lee" class="h-20 w-20 rounded-full mx-auto mb-4">
+          <h3 class="font-semibold">Jennifer Lee</h3>
+          <p class="text-gray-500 text-sm">Senior Lecturer</p>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4" onclick="openModal('jenniferModal')">View Profile</button>
+        </div>
+
+        <!-- Team Member Card 2 -->
+        <div class="bg-white p-4 shadow-md rounded-lg text-center">
+          <img src="https://via.placeholder.com/100" alt="Ethan Parker" class="h-20 w-20 rounded-full mx-auto mb-4">
+          <h3 class="font-semibold">Ethan Parker</h3>
+          <p class="text-gray-500 text-sm">Learning Designer</p>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4" onclick="openModal('ethanModal')">View Profile</button>
+        </div>
+
+        <!-- More team member cards can go here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Jennifer Lee -->
+  <div id="jenniferModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl relative">
+      <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" onclick="closeModal('jenniferModal')">✖️</button>
+      
+      <div class="flex space-x-6 items-start">
+        <img src="https://via.placeholder.com/100" alt="Jennifer Lee" class="h-24 w-24 rounded-full">
+        <div>
+          <h2 class="text-2xl font-bold">Jennifer Lee</h2>
+          <p class="text-sm text-gray-500">Senior Lecturer</p>
+          <p class="text-sm text-gray-500">Department: Info Sys & Business Analytics</p>
+          <p class="text-sm text-gray-500">Contact: jennifer.lee@rmit.edu.au</p>
+          <div class="flex space-x-2 mt-2">
+            <a href="#" class="text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-blue-600"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <button class="ml-auto bg-blue-500 text-white px-6 py-2 rounded">Follow</button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <div>
+          <h3 class="text-lg font-bold">About Me</h3>
+          <p class="text-sm text-gray-600">Hi, my name is Jennifer. I like to make learning more engaging and interactive for my students.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Courses Taught</h3>
+          <ul class="list-disc list-inside text-sm text-gray-600">
+            <li>INTE2397 Knowledge Management</li>
+            <li>ISYS3300 Business Ethics for a Digital Society</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Educational Technologies and Reviews for Jennifer -->
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <h4 class="font-bold">Educational Technologies Used</h4>
+          <ul class="mt-2">
+            <li class="flex items-center mb-2">
+              <img src="images/collaborate.png" alt="Canvas" class="h-8 w-8 mr-2">
+              <span>Canvas LMS</span>
+            </li>
+            <li class="flex items-center mb-2">
+              <img src="images/miro.png" alt="Miro Board" class="h-8 w-8 mr-2">
+              <span>Miro Board</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <h4 class="font-bold">Ratings and Reviews</h4>
+          <div class="flex items-center mb-2">
+            <img src="images/miro.png" alt="Miro Board" class="h-8 w-8 mr-2">
+            <div>
+              <h5 class="font-semibold">Miro Board</h5>
+              <p class="text-sm text-gray-500">"Miro is a simple and easy-to-use tool for student engagement."</p>
+            </div>
+            <div class="ml-auto text-yellow-500">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Ethan Parker -->
+  <div id="ethanModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl relative">
+      <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" onclick="closeModal('ethanModal')">✖️</button>
+      <div class="flex space-x-6 items-start">
+        <img src="https://via.placeholder.com/100" alt="Ethan Parker" class="h-24 w-24 rounded-full">
+        <div>
+          <h2 class="text-2xl font-bold">Ethan Parker</h2>
+          <p class="text-sm text-gray-500">Learning Designer</p>
+          <p class="text-sm text-gray-500">Department: Learning Design</p>
+          <p class="text-sm text-gray-500">Contact: ethan.parker@rmit.edu.au</p>
+          <div class="flex space-x-2 mt-2">
+            <a href="#" class="text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-blue-600"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <button class="ml-auto bg-blue-500 text-white px-6 py-2 rounded">Follow</button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <div>
+          <h3 class="text-lg font-bold">About Me</h3>
+          <p class="text-sm text-gray-600">Hi, I am Ethan. I specialize in designing interactive and engaging learning experiences for students.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold">Projects</h3>
+          <ul class="list-disc list-inside text-sm text-gray-600">
+            <li>Designing engaging content for online learning platforms</li>
+            <li>Leading student project collaborations</li>
+          </ul>
+        </div>
+      </div>
+
+        <!-- Educational Technologies and Reviews for Ethan -->
+<div class="grid grid-cols-2 gap-4 mt-6">
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <h4 class="font-bold">Educational Technologies Used</h4>
+      <ul class="mt-2">
+        <li class="flex items-center mb-2">
+          <img src="images/Padlet.png" alt="Padlet" class="h-8 w-8 mr-2">
+          <span>Padlet</span>
+        </li>
+        <li class="flex items-center mb-2">
+          <img src="images/miro.png" alt="Miro Board" class="h-8 w-8 mr-2">
+          <span>Miro Board</span>
+        </li>
+      </ul>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <h4 class="font-bold">Ratings and Reviews</h4>
+      <div class="flex-nonenpm init -y items-center mb-2">
+            <img src="images/Padlet.png" alt="Padlet" class=" items-center h-6 w-8 mr-2">
+            <div>
+              <h5 class="font-semibold">Padlet</h5>
+              <p class="text-sm text-gray-500">"Quite confusing at first but good tool for interactive class"</p>
+            </div>
+            <div class="ml-auto text-yellow-500">★★★★☆</div>
+
+  <!-- JavaScript to Open/Close Modals -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
